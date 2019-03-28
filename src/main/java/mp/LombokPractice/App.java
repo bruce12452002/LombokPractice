@@ -9,13 +9,17 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.var;
+import lombok.experimental.Accessors;
 
+@Setter
+@Getter
 //@Data
 //@ToString(exclude = { "name" })
 //@EqualsAndHashCode
 //@RequiredArgsConstructor(staticName = "xxx")
-@AllArgsConstructor(access = lombok.AccessLevel.PRIVATE)
+//@AllArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 //@NoArgsConstructor
+@Accessors(chain = true)
 public class App {
 	// private final int id;
 
@@ -29,6 +33,6 @@ public class App {
 		// System.out.println(new App().toString());
 		// System.out.println(new App().canEqual(new App()));
 		// System.out.println(App.xxx());
-
+		new App().setId(5).setName("xxx");
 	}
 }
